@@ -1,3 +1,54 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+user_list:
+  path: /api/users/index
+  controller: App\Controller\UserController::indexAction
+  methods: [GET];
+
+user_create:
+  path: /api/users/create
+  controller: App\Controller\UserController::createAction
+  methods: [POST]
+
+group_list:
+  path: /api/groups/index
+  controller: App\Controller\GroupController:indexAction
+  methods: [GET];
+
+group_create:
+  path: /api/groups/create
+  controller: App\Controller\GroupController:createAction
+  methods: [POST]
+
+grouping_list:
+  path: /api/grouping/index
+  controller: App\Controller\GroupingController:indexAction
+  methods: [GET];
+
+grouping_assign:
+  path: /api/grouping/assign
+  controller: App\Controller\GroupingController:assignAction
+  methods: [POST]
+
+group_delete:
+  path: /api/group/delete/{group}
+  controller: App\Controller\GroupController:deleteAction
+  methods: [DELETE]
+  requirements:
+    id: '\d+'
+
+grouping_delete:
+  path: /api/grouping/delete/{user}/{group}
+  controller: App\Controller\GroupingController:deleteAction
+  methods: [ DELETE ]
+  requirements:
+    id: '\d+'
+
+user_delete:
+  path: /api/users/delete/{user}
+  controller: App\Controller\UserController:deleteAction
+  methods: [DELETE]
+  requirements:
+    id: '\d+'
