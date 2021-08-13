@@ -51,6 +51,6 @@ class UserController extends AbstractAPIController
 
         $this->getDoctrine()->getManager()->remove($user_found);
         $this->getDoctrine()->getManager()->flush();
-        return  $this->respond('');
+        return  $this->respond('User deleted Succesfully');
     }
 }
