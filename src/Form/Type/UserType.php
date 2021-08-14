@@ -15,7 +15,7 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', TextType::class,[
+            ->add('username', TextType::class,[
                 'constraints' =>[
                     new NotNull([
                         'message' => 'Name can not be empty'

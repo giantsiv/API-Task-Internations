@@ -7,6 +7,7 @@ use App\Form\Type\UserType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class UserController extends AbstractAPIController
 {
@@ -51,6 +52,6 @@ class UserController extends AbstractAPIController
 
         $this->getDoctrine()->getManager()->remove($user_found);
         $this->getDoctrine()->getManager()->flush();
-        return  $this->respond('User deleted Succesfully');
+        return  $this->respond('');
     }
 }
